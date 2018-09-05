@@ -42,7 +42,7 @@ $ rosrun rosserial_arduino make_libraries.py .
 ```
 
 ### Copying `lib` Files to Project Folder/s
-Once the directory is cloned, use the `file_setup.py` file that copies the `lib/` folder into all PlatformIO project directory in the folder **OR** to a specific PlatformIO project directory. For example, in the first case the code would be:
+Once the `ros_lib` files are generated, use the `file_setup.py` file that copies the `lib/` folder into all PlatformIO project directory in the folder **OR** to a specific PlatformIO project directory. For example, in the first case the code would be:
 
 ```bash
 $ python file_setup.py --all
