@@ -27,6 +27,20 @@ $ sudo apt-get install \
   ros-kinetic-rosserial-python ros-kinetic-rosserial-arduino
 ```
 
+Once installed, source the ROS `setup.bash` file to access the newly installed packages.
+
+```bash
+$ source /opt/ros/indigo/setup.bash   # For ROS Indigo
+$ source /opt/ros/kinetic/setup.bash  # For ROS Kinetic
+```
+
+Finally, `cd` into the `lib/` folder of this respository, and run the following command to generate the `ros_lib` files required for using ROS with a microcontroller.
+
+```bash
+$ cd lib/
+$ rosrun rosserial_arduino make_libraries.py .
+```
+
 ### Copying `lib` Files to Project Folder/s
 Once the directory is cloned, use the `file_setup.py` file that copies the `lib/` folder into all PlatformIO project directory in the folder **OR** to a specific PlatformIO project directory. For example, in the first case the code would be:
 
@@ -60,7 +74,7 @@ $ cd ros/
 $ platformio init --board teensy31
 ```
 
-    NOTE: The `--board` option can be changed to the one that you are using. It should be noted, however, that the Pheeno uses a Teensy 3.2 whose PlatformIO option is specified by `--board teensy31`.
+**NOTE**: The `--board` option can be changed to the one that you are using. It should be noted, however, that the Pheeno uses a Teensy 3.2 whose PlatformIO option is specified by `--board teensy31`.
     
 Finally, run (compile) and upload the code:
 
