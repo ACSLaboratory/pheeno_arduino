@@ -5,10 +5,27 @@ Instead of locating all the files for the Arduino/Teensy within the `pheeno_ros`
 To install, just clone this directory into your home (`~/`) directory. This code works on both ROS Indigo and ROS Kinetic.
 
 ```bash
-git clone https://github.com/acslaboratory/pheeno_arduino.git
+$ git clone https://github.com/acslaboratory/pheeno_arduino.git
 ```
 
 ## Setup
+
+### Creating `ros_lib` files.
+For ROS to work with arduino (and other) microcontrollers, libraries were created to interface a computer with a microcontroller thorugh serial connection. These libraries **must** be installed to use the `pheeno_arduino` files. To install these libraries, ROS Indigo or Kinetic must be installed and their respective ROS repositories accessable. Then install the relavent packages depending on your ROS version:
+
+**ROS Indigo**
+```bash
+$ sudo apt-get install \
+  ros-indigo-rosserial ros-indigo-rosserial-client \
+  ros-indigo-rosserial-python ros-indigo-rosserial-arduino
+```
+
+**ROS Kinetic**
+```bash
+$ sudo apt-get install \
+  ros-kinetic-rosserial ros-kinetic-rosserial-client \
+  ros-kinetic-rosserial-python ros-kinetic-rosserial-arduino
+```
 
 ### Copying `lib` Files to Project Folder/s
 Once the directory is cloned, use the `file_setup.py` file that copies the `lib/` folder into all PlatformIO project directory in the folder **OR** to a specific PlatformIO project directory. For example, in the first case the code would be:
