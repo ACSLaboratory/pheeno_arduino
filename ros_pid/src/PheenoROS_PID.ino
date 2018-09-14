@@ -38,21 +38,21 @@ int angular = 0;  // Turning (Right and Left) motion.
 
 
 // Create Publishers
-ros::Publisher pub_ir_center("/scan_center", &scan_center_msg);  // Center IR
-ros::Publisher pub_ir_back("/scan_back", &scan_back_msg);        // Back IR
-ros::Publisher pub_ir_right("/scan_right", &scan_right_msg);     // Right IR
-ros::Publisher pub_ir_left("/scan_left", &scan_left_msg);        // Left IR
-ros::Publisher pub_ir_cr("/scan_cr", &scan_cr_msg);          // Center Right IR
-ros::Publisher pub_ir_cl("/scan_cl", &scan_cl_msg);          // Center Left IR
-ros::Publisher pub_encoder_LL("/encoder_LL", &encoder_LL_msg);  // Encoder LL
-ros::Publisher pub_encoder_LR("/encoder_LR", &encoder_LR_msg);  // Encoder LR
-ros::Publisher pub_encoder_RL("/encoder_RL", &encoder_RL_msg);  // Encoder RL
-ros::Publisher pub_encoder_RR("/encoder_RR", &encoder_RR_msg);  // Encoder RR
+ros::Publisher pub_ir_center("scan_center", &scan_center_msg);  // Center IR
+ros::Publisher pub_ir_back("scan_back", &scan_back_msg);        // Back IR
+ros::Publisher pub_ir_right("scan_right", &scan_right_msg);     // Right IR
+ros::Publisher pub_ir_left("scan_left", &scan_left_msg);        // Left IR
+ros::Publisher pub_ir_cr("scan_cr", &scan_cr_msg);          // Center Right IR
+ros::Publisher pub_ir_cl("scan_cl", &scan_cl_msg);          // Center Left IR
+ros::Publisher pub_encoder_LL("encoder_LL", &encoder_LL_msg);  // Encoder LL
+ros::Publisher pub_encoder_LR("encoder_LR", &encoder_LR_msg);  // Encoder LR
+ros::Publisher pub_encoder_RL("encoder_RL", &encoder_RL_msg);  // Encoder RL
+ros::Publisher pub_encoder_RR("encoder_RR", &encoder_RR_msg);  // Encoder RR
 
 // Uncomment these if you would like magnetometer, accelerometer, or gyro data.
-// ros::Publisher pub_mag("/mag", &mag_msg);        // Magnetometer
-// ros::Publisher pub_gyro("/gyro", &gyro_msg);     // Gyroscope
-// ros::Publisher pub_accel("/accel", &accel_msg);  // Accelerometer
+// ros::Publisher pub_mag("mag", &mag_msg);        // Magnetometer
+// ros::Publisher pub_gyro("gyro", &gyro_msg);     // Gyroscope
+// ros::Publisher pub_accel("accel", &accel_msg);  // Accelerometer
 
 
 // Callback for cmd_vel Subscriber.
@@ -81,7 +81,7 @@ void callback(const geometry_msgs::Twist &msg) {
 
 
 // Create Subscribers
-ros::Subscriber<geometry_msgs::Twist> sub_cmd_vel("/cmd_vel", callback);
+ros::Subscriber<geometry_msgs::Twist> sub_cmd_vel("cmd_vel", callback);
 
 
 void setup() {
